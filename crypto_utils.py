@@ -26,6 +26,6 @@ def decrypt_message(token: bytes) -> str:
         fernet = Fernet(key)
         return fernet.decrypt(token).decode("utf-8")
     except InvalidToken:
-        return "❌ Error: Invalid key or corrupted message. Cannot decrypt."
+        return " Error: Invalid key or corrupted message. Cannot decrypt."
     except FileNotFoundError:
-        return "❌ Error: Encryption key file not found."
+        return " Error: Encryption key file not found."
